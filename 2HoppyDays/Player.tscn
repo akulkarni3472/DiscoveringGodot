@@ -9,7 +9,7 @@ height = 14.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 512, 256 )
-scale = Vector2( 3.68203, 3.68203 )
+scale = Vector2( 5.76203, 5.76203 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
