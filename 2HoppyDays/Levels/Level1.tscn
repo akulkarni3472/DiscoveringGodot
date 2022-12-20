@@ -11,7 +11,8 @@ height = 350.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 519, 173 )
-jump_speed = 2000
+move_speed = 1500
+jump_speed = 3000
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 516, 411 )
@@ -27,3 +28,38 @@ visible = false
 position = Vector2( 0, -29 )
 rotation = -1.5708
 shape = SubResource( 1 )
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2( 157, 344 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor2"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+visible = false
+position = Vector2( 0, -29 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="Floor3" type="StaticBody2D" parent="."]
+position = Vector2( 899, 379 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Floor3"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+visible = false
+position = Vector2( 0, -29 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 513, 299 )
+current = true
+zoom = Vector2( 2, 2 )
