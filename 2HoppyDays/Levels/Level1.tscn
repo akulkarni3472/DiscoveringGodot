@@ -11,7 +11,7 @@ height = 350.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 519, 173 )
-move_speed = 1500
+move_speed = 1000
 jump_speed = 3000
 
 [node name="Floor" type="StaticBody2D" parent="."]
