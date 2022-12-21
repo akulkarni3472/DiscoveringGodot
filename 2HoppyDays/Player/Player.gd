@@ -6,6 +6,8 @@ export var gravity = 200
 const UP = Vector2(0, -1)
 export var  jump_speed = 1000
 
+signal animate
+
 func _physics_process(delta):
 	apply_gravity()
 	jump()
@@ -32,13 +34,4 @@ func jump():
 		motion.y -= jump_speed
 
 func animate():
-	if motion.y < 0:
-		$AnimatedSprite.play("Jump")
-	elif motion.x < 0:
-		$AnimatedSprite.play("Walk")
-		$AnimatedSprite.set_flip_h(true)
-	elif motion.x > 0:
-		$AnimatedSprite.play("Walk")
-		$AnimatedSprite.set_flip_h(false)
-	else:
-		$AnimatedSprite.play("Idle")
+	emit_signal("animate", motion)
