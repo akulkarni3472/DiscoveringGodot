@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GFX/Environment/ground_grass.png" type="Texture" id=2]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 14.0
-height = 350.0
+[ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,52 +10,7 @@ position = Vector2( 519, 173 )
 move_speed = 1000
 jump_speed = 3000
 
-[node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2( 516, 411 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Floor"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-visible = false
-position = Vector2( 0, -29 )
-rotation = -1.5708
-shape = SubResource( 1 )
-
-[node name="Floor2" type="StaticBody2D" parent="."]
-position = Vector2( 157, 344 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Floor2"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-visible = false
-position = Vector2( 0, -29 )
-rotation = -1.5708
-shape = SubResource( 1 )
-
-[node name="Floor3" type="StaticBody2D" parent="."]
-position = Vector2( 899, 379 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Floor3"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
-visible = false
-position = Vector2( 0, -29 )
-rotation = -1.5708
-shape = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 513, 299 )
-current = true
-zoom = Vector2( 2, 2 )
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 196620, 2, 0, 327686, 2, 0, 524313, 3, 0, 786450, 2, 0, 1048605, 2, 0 )

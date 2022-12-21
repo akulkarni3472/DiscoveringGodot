@@ -18,5 +18,11 @@ script = ExtResource( 2 )
 visible = false
 shape = SubResource( 1 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+
 [connection signal="animate" from="." to="." method="_on_Player_animate"]
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
