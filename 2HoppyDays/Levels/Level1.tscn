@@ -11,6 +11,7 @@ move_speed = 1000
 jump_speed = 3000
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1, -2 )
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 196620, 2, 0, 327686, 2, 0, 524313, 3, 0, 786450, 2, 0, 1048605, 2, 0 )
+tile_data = PoolIntArray( -196584, 2, 0, -196574, 2, 0, -196564, 2, 0, 55, 2, 0, 65551, 2, 0, 327686, 2, 0, 720960, 2, 0, 1835079, 2, 0 )
