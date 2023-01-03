@@ -4,21 +4,24 @@ var motion = Vector2(0, 0)
 export var move_speed = 500
 export var gravity = 200
 const UP = Vector2(0, -1)
-export var  jump_speed = 1000
+export var jump_speed = 1000
 
 signal animate
 
 func _physics_process(delta):
 	apply_gravity()
-	jump()
 	animate()
+	jump()
 	move()
+	move_and_slide(motion, UP)
 
 func apply_gravity():
-	if not is_on_floor():
-		motion.y += gravity
-	else:
+	if is_on_floor():
 		motion.y = 0
+	elif is_on_ceiling():
+		motion.y = gravity
+	else:
+		motion.y += gravity
 
 func move():
 	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
@@ -27,7 +30,6 @@ func move():
 		motion.x = move_speed
 	else:
 		motion.x = 0
-	move_and_slide(motion, UP)
 
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
