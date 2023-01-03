@@ -13,8 +13,11 @@ height = 14.0
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 512, 256 )
-scale = Vector2( 5.76203, 5.76203 )
+scale = Vector2( 6.24203, 6.24203 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
 
@@ -25,12 +28,13 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 80, 0 )
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 4, 4 )
 limit_left = 0
 limit_smoothed = true
 smoothing_enabled = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+scroll_base_offset = Vector2( 0, -1000 )
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
@@ -44,7 +48,7 @@ texture = ExtResource( 3 )
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 position = Vector2( -45, -731 )
 z_as_relative = false
-motion_scale = Vector2( 0.5, 1 )
+motion_scale = Vector2( 0.25, 0.2 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
@@ -53,8 +57,7 @@ texture = ExtResource( 4 )
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 position = Vector2( -45, -731 )
 z_as_relative = false
-motion_scale = Vector2( 0.75, 1 )
-motion_offset = Vector2( 0, -750 )
+motion_scale = Vector2( 0.5, 0.2 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer3"]
@@ -63,7 +66,7 @@ texture = ExtResource( 5 )
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
 position = Vector2( -45, -731 )
 z_as_relative = false
-motion_offset = Vector2( 0, -750 )
+motion_scale = Vector2( 0.75, 0.2 )
 motion_mirroring = Vector2( 2048, 0 )
 
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer4"]

@@ -5,6 +5,7 @@ export var move_speed = 500
 export var gravity = 200
 const UP = Vector2(0, -1)
 export var jump_speed = 1000
+const WORLD_LIMIT = 4000
 
 signal animate
 
@@ -16,6 +17,8 @@ func _physics_process(delta):
 	move_and_slide(motion, UP)
 
 func apply_gravity():
+	if position.y > WORLD_LIMIT:
+		end_game()
 	if is_on_floor():
 		motion.y = 0
 	elif is_on_ceiling():
@@ -37,3 +40,6 @@ func jump():
 
 func animate():
 	emit_signal("animate", motion)
+
+func end_game():
+	get_tree().quit()
