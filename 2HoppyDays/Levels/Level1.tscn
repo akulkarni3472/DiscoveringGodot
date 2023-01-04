@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Hazards/SpikeTop.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 99, -233 )
+collision_mask = 6
 move_speed = 1000
 jump_speed = 3000
 
@@ -15,3 +17,17 @@ position = Vector2( 1, -2 )
 tile_set = ExtResource( 2 )
 format = 1
 tile_data = PoolIntArray( -327632, 2, 0, -262102, 2, 0, -196572, 2, 0, -131072, 2, 0, -131066, 2, 0, -131060, 2, 0, -131054, 2, 0, -131048, 2, 0, -131042, 2, 0, -65430, 2, 0, 100, 2, 0, 65630, 2, 0, 131160, 2, 0, 196690, 2, 0, 262220, 2, 0, 327750, 2, 0, 393268, 2, 0, 393274, 2, 0, 393280, 2, 0 )
+
+[node name="Hazards" type="Node" parent="."]
+
+[node name="SpikeTop" parent="Hazards" instance=ExtResource( 3 )]
+position = Vector2( 3545, 329 )
+scale = Vector2( 2, 2 )
+
+[node name="SpikeTop2" parent="Hazards" instance=ExtResource( 3 )]
+position = Vector2( 4331, 329 )
+scale = Vector2( 2, 2 )
+
+[node name="SpikeTop3" parent="Hazards" instance=ExtResource( 3 )]
+position = Vector2( 2500, -247 )
+scale = Vector2( 2, 2 )

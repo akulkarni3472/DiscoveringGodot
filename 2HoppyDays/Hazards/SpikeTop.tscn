@@ -4,6 +4,8 @@
 [ext_resource path="res://Hazards/Hazard.gd" type="Script" id=2]
 
 [node name="SpikeTop" type="Area2D"]
+modulate = Color( 0.694118, 0.054902, 0.054902, 1 )
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
