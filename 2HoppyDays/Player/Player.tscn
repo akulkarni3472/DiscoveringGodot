@@ -72,5 +72,8 @@ motion_mirroring = Vector2( 2048, 0 )
 [node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer4"]
 texture = ExtResource( 6 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
 [connection signal="animate" from="." to="." method="_on_Player_animate"]
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]

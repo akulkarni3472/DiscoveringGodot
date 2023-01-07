@@ -38,6 +38,7 @@ func move():
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		motion.y -= jump_speed
+		play_sound("res://SFX/jump1.ogg")
 
 func animate():
 	emit_signal("animate", motion)
@@ -49,6 +50,11 @@ func hurt():
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
 	motion.y -= jump_speed
+	play_sound("res://SFX/pain.ogg")
 	lives -= 1
 	if lives < 0:
 		end_game()
+
+func play_sound(sound_path):
+	$AudioStreamPlayer.stream = load(sound_path)
+	$AudioStreamPlayer.play()
